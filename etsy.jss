@@ -77,30 +77,34 @@ console.log(itemsPriced);
 
 // Find GBP item 
 
-var currency = items.filter(function(item)
+var currency = currency_code.filter(function(item)
 {
-  item.currency_code.includes('GBP')
+    return currency_code.name('GBP')
 });
 
-console.log(currency);
+console.log(gbpCode);
 
 console.log()
 
+// // im not sure what to put when i console.log, i always get confused on that part. also, i copied this code from the notes you gave us. im not even quite sure i know what it says, really. 
 
-var materials = ['leather', 'wood', 'glass', 'etched'];
+// // im gonna throw my computer 
 
-var searchTerm = 'wood';
+// // im gonna be the first person to drop out of The Iron Yard 
 
-var matches = materials.filter(funtion(materials) {
-    return materials === searchTerm; 
+var wooditems = items.filter(function(item) {
+    return item.includes('wood')
 });
 
-console.log(materials);
+console.log(wooditems);
 
 
 // how many materials in product 
 
 var itemMaterials =
+
+
+
 
 
 
