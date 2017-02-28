@@ -44,15 +44,19 @@ console.log(currency);
 
 // ********* which items contain wood ***********
 
-var materials = ['leather', 'wood', 'glass', 'etched'];
+// var materials = ['leather', 'wood', 'glass', 'etched'];
 
-var searchTerm = 'wood';
+// var searchTerm = 'wood';
 
-var matches = materials.filter(function(materials) {
-    return materials === searchTerm; 
-});
-
+// var matches = materials.filter(function(materials) {
+//     return materials === searchTerm; 
+// });
+var materialWanted = 'wood';
+var matches = items.filter(function(item) {
+    return itemsPriced.materials.includes('wood');
+})
 console.log(matches);
+// console.log(matches);
 // i had console.log(materials) but i think its supposed to be console.log(matches). 
 
 // var woodItems = items.filter(function(item) {
@@ -68,7 +72,7 @@ console.log(matches);
 // ******* items made with more than 8 different materials *******
 
 var alotOfMaterials = items.filter(function(item) {
-    return (item.materials.length >= [8]);
+    return (item.materials.length >= 8);
 });
 
 alotOfMaterials.forEach(function(item) {
@@ -81,7 +85,7 @@ alotOfMaterials.forEach(function(item) {
 
 // ******* items made by sellers *********
 
-var madeBySeller = items.reduce(function(total, currentItem) {
+var madeBySeller = items.filter(function(total, currentItem) {
     if (currentItem.who_made === 'i_did') {
         return total + 1
     }
